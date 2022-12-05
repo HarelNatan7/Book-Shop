@@ -1,0 +1,108 @@
+body {
+    background-color: #00539CFF;
+    overflow-x: hidden;
+    padding: 0 40px;
+}
+h1 {
+    color: #EEA47FFF;
+    text-align: center;
+}
+.modal {
+    background-color: #111;
+    color: #ffffff;
+    padding: 10px;
+    position: absolute;
+    top: 0px;
+    left: 150%;
+    height: 92vh;
+    min-width: 300px;
+    text-align: center;
+    border-radius: 70px;
+}
+.modal.open {
+    left: 50%;
+    transition: left .5s;
+}
+.user-msg {
+    position: fixed;
+    bottom: -100px;
+    right:10px;
+    background-color: red;
+    padding: 10px;
+    border-radius: 10px;
+}
+.user-msg.open {
+    bottom: 10px;
+    transition: bottom .5s;
+}
+.rate-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 10px;
+    max-height: 25px;
+}
+.rate-holder {
+    background-color: #fff;
+    color: #111;
+    min-width: 40px;
+    border-radius: 10px;
+    margin: 0 7px;
+}
+.books-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+table {
+    border: 2px solid black;
+    border-collapse: collapse;
+    margin: 25px 0;
+    text-align: center;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    
+}
+thead tr {
+    background-color: #055848;
+    color: #ffffff;
+    text-align: left;
+}
+th,
+td {
+    padding: 12px 15px;
+    border: 2px solid black;
+}
+tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+tbody tr:nth-of-type(even) {
+    background-color: #a8f5b7;
+}
+
+tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+tbody tr.active-row {
+    font-weight: bold;
+    /* color: #009879; */
+}
+button {
+    cursor: pointer;
+    border: 2px outset rgb(51, 233, 243);
+    border-radius: 10px;
+    padding: 5px;
+}
+.read-btn {
+    background-color: rgb(98, 98, 215);
+}
+.update-btn {
+    background-color: rgb(193, 173, 61);
+}
+.delete-btn {
+    background-color: rgb(210, 53, 53);
+}

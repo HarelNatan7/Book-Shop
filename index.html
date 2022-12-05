@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Shop</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body onload="onInIt()">
+    <h1>Welcome To The Book Shop</h1>
+    <section class="book-filter">
+        <h2>Filter</h2>
+        <form onsubmit="onSearchBook(event)">
+            By Name:
+            <input type="text" id="search-box" placeholder="Search Book"/>
+            <button class="search-btn">Search</button>
+        </form>
+        <hr />
+        <label>
+            Min Rate:
+            <input type="range" min="0" max="10" value="0" class="filter-rate-range"
+                onchange="this.title=this.value;onSetFilterBy({minRate: this.value})" />
+        </label>
+        <hr />
+        <label>
+            Max Price:
+            <input type="range" min="20" max="200" value="200" class="filter-price-range"
+                onchange="this.title=this.value;onSetFilterBy({maxPrice: this.value})" />
+        </label>
+        <hr />
+        
+    </section>
+    <button title="Add Book" onclick="onAddBook()">Add Book</button>
+    <section class="books-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Rating</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+    </section>
+    <div class="modal">
+        <h3></h3>
+        <h4>Book Id: <span></span> </h4>
+        <h5>Book Description: </h5>
+        <p></p>
+          <section class="rate-container">
+            <section class="rate-book">Rate This Book:</section>
+              <button class="decrease-btn" onclick="onDecreaseRating()">-</button>
+              <section class="rate-holder"></section>
+              <button class="increase-btn" onclick="onIncreaseRating()">+</button>
+            </section>
+        <button onclick="onCloseModal()">Close</button>
+    </div>
+    <div class="user-msg"></div>
+    <script src="services/local-storage.js"></script>
+    <script src="services/util-service.js"></script>
+    <script src="services/book-shop-service.js"></script>
+    <script src="controller.js"></script>
+</body>
+
+</html>
